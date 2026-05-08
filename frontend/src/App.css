@@ -18,25 +18,27 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding-left: 300px;
+    position: relative;
 }
 
 .auth-box {
+    position: fixed;
+    top:40px;
+    right: 80px;
     width: 100%;
-    max-width: 400px;
+    max-width: 200px;
     padding: 32px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    transform: translateY(-50px);
 }
 
 .auth-box h1 {
     margin-bottom: 50px;
     text-align: center;
+    color: #2563eb;
 }
 
 .auth-box form {

@@ -1,0 +1,88 @@
+.main-page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 60px;
+    padding-right: 340px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-page h1 {
+    font-size: 64px;
+    margin-bottom: 30px;
+    color: #2563eb;
+}
+
+.flight-search-form {
+    width: fit-content;
+    max-width: 1100px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.flight-search-form input {
+    flex: 1;
+    min-width: 18px;
+    height: 56px;
+    padding: 0 16px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(30, 30, 30, 0.75);
+    color: white;
+}
+
+.flight-search-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.flight-search-form button {
+    height: 56px;
+    padding: 0 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: #4c6ef5;
+    color: white;
+    cursor: pointer;
+}
+
+.flight-search-form button:hover {
+    background: #3b5bdb;
+}
+
+.result-card {
+    width: 90%;
+    max-width: 1100px;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(80, 80, 0, 0.75);
+    border-radius: 12px;
+    color: #222;
+    text-align: left;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.result-data pre {
+    margin: 0;
+    padding: 16px;
+    border-radius: 8px;
+    background: #111;
+    color: #f1f1f1;
+    overflow-x: auto;
+}
+
+.error-message {
+    margin-top: 20px;
+    color: #d62828;
+    font-weight: 600;
+}

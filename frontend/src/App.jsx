@@ -1,8 +1,6 @@
-import TextField from '@mui/material/TextField';
 import {useState} from "react";
 import "./App.css";
-import MyForm from "./components/MyForm.jsx";
-import MainPage from "./components/MainPage.jsx";
+import MainPage from "./MainPage.jsx";
 
 function App() {
     const [isLogin, setIsLogin] = useState(true);
@@ -46,7 +44,7 @@ function App() {
                     throw new Error("Login failed.");
                 }
 
-                setMessage("Login successful!");
+                setMessage("");
                 setIsLoggedIn(true);
                 return;
             }
@@ -85,15 +83,33 @@ function App() {
             setMessage("An error occurred during registration.");
         }
     };
-    if (isLoggedIn) {
-        return <MainPage/>
-    }
 
     return (
         <div className="auth-container">
             <div className="auth-box">
                 <h1>{isLogin ? "Login" : "Registration"}</h1>
-
+                {isLoggedIn ? (
+                    <div className="logged-in-box">
+                        <p className="logged-in-text">Logged in</p>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setIsLoggedIn(false);
+                                setMessage("Successfully logged out!");
+                                setFormData({
+                                    userName: "",
+                                    firstName: "",
+                                    lastName: "",
+                                    birthDate: "",
+                                    email: "",
+                                    password: "",
+                                });
+                            }}
+                        >
+                            Logout
+                        </button>
+                    </div>
+                ) : (
                 <form onSubmit={handleSubmit}>
                     {!isLogin && (
                         <>
@@ -159,7 +175,7 @@ function App() {
                         {isLogin ? "Login" : "Registration"}
                     </button>
                 </form>
-
+                )}
                 {
                     message && <p className="message">{message}</p>
                 }
@@ -170,6 +186,7 @@ function App() {
                         : "Already have an account? Sign in"}
                 </p>
             </div>
+            <MainPage/>
         </div>
     );
 }

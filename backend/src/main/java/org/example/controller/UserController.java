@@ -57,8 +57,8 @@ public class UserController {
     }
 
     @GetMapping("/flights/search")
-    public String searchFlights(@RequestParam String from, @RequestParam String to, @RequestParam String dateFrom, @RequestParam String dateTo) {
-        return flySearchingService.searchFlights(from, to, dateFrom, dateTo, 1, "EUR", 10, 0);
+    public String searchFlights(@RequestParam String origin, @RequestParam String destination, @RequestParam String departDate, @RequestParam (required = false)String returnDate, @RequestParam (defaultValue = "EUR")String currency) {
+        return flySearchingService.searchFlights(origin, destination, departDate, returnDate, currency);
     }
 
     @GetMapping("/flights/location")
